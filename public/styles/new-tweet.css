@@ -1,13 +1,16 @@
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-
+/*  */
 .new-tweet h2 {
   text-align: flex-start;
   font-size: 24px; 
   margin-bottom: 60px;
 }
+/*  tweet text area for typing */
 .new-tweet textarea {
   width: 250%;
   height: 50px;
@@ -20,7 +23,7 @@
   background-color: transparent;
   box-sizing: border-box;
 }
-
+/* spaces the button and counter sections */
 .new-tweet div {
   font-family: "Bungee", sans-serif;
   display: flex;
@@ -36,10 +39,12 @@
   border-radius: 10px;
   margin-right: 10px;
 }
+/*  made counter on the right side */
 .counter {
   justify-content: flex-end;
   align-items: flex-end;
 }
+/* if counter goes over 140 texts turn red */
 .counter.overCount{
   color: red;
 }

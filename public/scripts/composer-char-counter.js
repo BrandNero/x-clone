@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 $(document).ready(() => {
   const maxChar = 140;
 
-  $("#tweet-text").on("input", function() {
+  $("#tweet-text").on("input", () => {
     // Number of characters
     const charsLength = this.value.length;
 

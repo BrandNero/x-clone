@@ -25,9 +25,6 @@ body {
  */
 main{
   width: 90%;
-  display: flex;
-  justify-content: column;
-  align-items: center;
   background-color: inherit;
 }
 

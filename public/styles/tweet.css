@@ -1,0 +1,50 @@
+.tweets-box {
+  padding-left: 165px;
+}
+/*compose tweet area */
+.tweet {
+  background-color: white;
+  border: 2px solid black;
+  width: 150%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* tweet profile */
+.profile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* tweet names */
+div.name-handles {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* tweeter profile pic */
+div.name-handles i {
+  margin-right: 8px;
+  color:fuchsia;
+}
+/* tweet-contents */
+div.tweet-content{
+  height: 35px;
+  border-bottom: 4px solid black;
+}
+/* footer area */
+.tweet-symbols{
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+}
+.tweet-symbols i{
+  margin-left: 5px;
+}
+.tweet-symbols i:hover{
+  color: yellow;
+}
+.timestamp{
+  color: black;
+}
