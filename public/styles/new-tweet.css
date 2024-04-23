@@ -10,10 +10,11 @@
 }
 .new-tweet textarea {
   width: 250%;
-  size: 10px;
   height: 50px;
   border: none;
   resize: none;
+  outline: none;
+  font-size: 30px;
   margin-bottom: 15px;
   border-bottom: 5px solid #2c272721;
   background-color: transparent;
@@ -38,4 +39,7 @@
 .counter {
   justify-content: flex-end;
   align-items: flex-end;
+}
+.counter.overCount{
+  color: red;
 }
