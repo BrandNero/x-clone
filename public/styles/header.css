@@ -2,7 +2,8 @@ header {
   width: 100%;
   height: 520px;
   padding-top: 120px;
-  background-color: blueviolet;
+  background-color: #FF0000;
+  background-image: url("../images/brick-wall.png");
   display: flex;
   flex-direction: column;
   align-items: center;
