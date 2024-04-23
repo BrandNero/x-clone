@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/new-tweet.css">
+    <link rel="stylesheet" href="styles/tweet.css">
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -35,7 +36,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <div class="tweet">Write a new tweet
+      <div>Write a new tweet
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
@@ -62,6 +63,24 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <section class="tweets-box">
+        <article class="tweet">
+          <div class="profile">
+            <i class="fa-solid fa-user"></i>
+            <h2>Name</h2>
+            <span>@email</span>
+          </div>
+          <div class="tweet-content">
+            <p>tweet conten</p>
+          </div>
+          <footer>
+            <p>footer content</p>
+          </footer>
+        </article>
+      </section>
+
       </section>
     </main>
   </body>
