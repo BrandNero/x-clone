@@ -30,44 +30,45 @@ $(() => {
   ];
   
   const renderTweets = function(tweets) {
-    $('#tweets-box').empty();
     for (const tweet of tweets) {
       const $tweetEntry = createTweetElement(tweet);
       $("#tweets-box").prepend($tweetEntry);
     }
   };
-  
-  
   // create the tweets box
   const createTweetElement = function(tweet) {
     // Article creation
     const $tweet = (`
     <section class="tweets-box">
     <article class="tweet">
-      <div class="profile">
-        <div class="name-handles">
-            <img src="${tweet.user.avatars}">
-            <span class="tweet-user-name">${tweet.user.name}</span>           
-          </div>
-          <span>${tweet.user.handle}</span>
-          </div>
-        <div class="tweet-content">
-          ${tweet.content.text}
+    <div class="profile">
+    <div class="name-handles">
+    <img src="${tweet.user.avatars}">
+    <span class="tweet-user-name">${tweet.user.name}</span>           
+    </div>
+    <span>${tweet.user.handle}</span>
+    </div>
+    <div class="tweet-content">
+    ${tweet.content.text}
         </div>
         <footer>
-          <span class="tweet-symbols">
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-share"></i>
-          </span>
+        <span class="tweet-symbols">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-share"></i>
+        </span>
         <span class="timestamp">${tweet.created_at}</span>
-      </footer>
-    </article>
-    </section>
-    `);
+        </footer>
+        </article>
+        </section>
+        `);
     return $tweet;
   };
+  $("#new-tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    console.log("form submitted");
+    const formData = $(this).serialize();
+    console.log(formData);
+  });
   renderTweets(data);
-  //make sure $tweet is working
-  $('#tweets-box').prepend(renderTweets(data));
 });
