@@ -3,56 +3,71 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(() => {
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ];
+  
+  const renderTweets = function(tweets) {
+    $('#tweets-box').empty();
+    for (const tweet of tweets) {
+      const $tweetEntry = createTweetElement(tweet);
+      $("#tweets-box").prepend($tweetEntry);
+    }
+  };
+  
+  
   // create the tweets box
-  const createTweetElement = function() {
+  const createTweetElement = function(tweet) {
     // Article creation
-    const $tweets = `
-    <section class="tweet">
-    <header>
-      <div>
-        <div class="tweet-user">
-          <img src="${tweetData.user.avatars}">
-          <span class="tweet-user-name">${tweetData.user.name}</span>
+    const $tweet = (`
+    <section class="tweets-box">
+    <article class="tweet">
+      <div class="profile">
+        <div class="name-handles">
+            <img src="${tweet.user.avatars}">
+            <span class="tweet-user-name">${tweet.user.name}</span>           
+          </div>
+          <span>${tweet.user.handle}</span>
+          </div>
+        <div class="tweet-content">
+          ${tweet.content.text}
         </div>
-      </div>
-      <div class="tweet-handle">
-        ${tweetData.user.handle}
-      </div>
-    </header>
-    <article>
-      ${tweetData.content.text}
+        <footer>
+          <span class="tweet-symbols">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-share"></i>
+          </span>
+        <span class="timestamp">${tweet.created_at}</span>
+      </footer>
     </article>
-    <footer>
-      <span class="tweet-time">
-        ${tweetData.created_at}
-      </span>
-      <span class="tweet-icons">
-        <i class="fa-solid fa-flag"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i>
-      </span>
-    </footer>
-  </section>
-  `;
-    return $tweets;
+    </section>
+    `);
+    return $tweet;
   };
-
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
-  
-  const $tweet = createTweetElement(tweetData);
-  
-  // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  
-  $('#tweets-box').append($tweet);
+  renderTweets(data);
+  //make sure $tweet is working
+  $('#tweets-box').prepend(renderTweets(data));
 });
