@@ -39,31 +39,36 @@ $(() => {
       $('.tweets-box').prepend($tweetEntry);
     }
   };
-
-  $("#new-tweet-form").on("submit", function(event) {
-    //makes it so it doesnt refresh
-    event.preventDefault();
-    //
-    const formData = $(this).serialize();
-    //the tweet text
-    const tweetText = $(this).find("textarea").val();
+  const isTweetValid = (tweetText) => {
     if (tweetText.length === 0) {
       alert('No content submitted');
+      return false;
     } else if (tweetText.length > 140) {
       alert('Tweet is too long');
+      return false;
     }
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: formData,
-      success: () => {
-        $(this).find("textarea").val('');
-        loadTweets();
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+    return true;
+  };
+  
+  $("#new-tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+    const tweetText = $(this).find("textarea").val().trim();
+    if (isTweetValid(tweetText)) {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: formData,
+        success: () => {
+          $(this).find("textarea").val('');
+          $(this).find(".counter").text(140);
+          loadTweets();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
   });
   
   const loadTweets = function() {
