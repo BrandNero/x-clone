@@ -24,9 +24,8 @@ div.name-handles {
   align-items: center;
 }
 /* tweeter profile pic */
-div.name-handles i {
+div.name-handles img {
   margin-right: 8px;
-  color:fuchsia;
 }
 /* tweet-contents */
 div.tweet-content{
