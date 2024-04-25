@@ -43,7 +43,6 @@ $(() => {
   $("#new-tweet-form").on("submit", function(event) {
     //makes it so it doesnt refresh
     event.preventDefault();
-    console.log("form submitted");
     //
     const formData = $(this).serialize();
     //the tweet text
@@ -58,8 +57,7 @@ $(() => {
       url: '/tweets',
       data: formData,
       success: () => {
-        console.log('new tweet');
-        // GET all tweets
+        $(this).find("textarea").val('');
         loadTweets();
       },
       error: (err) => {
