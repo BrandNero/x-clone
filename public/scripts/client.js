@@ -5,7 +5,6 @@
  */
 
 $(() => {
-
   // create the tweets box
   const createTweetElement = function(data) {
     // Article creation
@@ -40,11 +39,19 @@ $(() => {
       $('.tweets-box').prepend($tweetEntry);
     }
   };
+
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     console.log("form submitted");
+    const tweetText = $(this).find('textarea').val();
     const formData = $(this).serialize();
-    console.log(formData);
+    if (tweetText.length === 0) {
+      alert('No content submitted');
+    } else if (tweetText.length > 140) {
+      alert('Tweet is too long');
+    } else {
+      console.log(formData);
+    }
   });
   
   const loadTweets = function() {
@@ -60,6 +67,7 @@ $(() => {
       }
     });
   };
-  
+  let tweetContent = $(this).find('textarea[name="text"]').val();
+
   loadTweets();
 });
