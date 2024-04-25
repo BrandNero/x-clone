@@ -41,17 +41,31 @@ $(() => {
   };
 
   $("#new-tweet-form").on("submit", function(event) {
+    //makes it so it doesnt refresh
     event.preventDefault();
     console.log("form submitted");
-    const tweetText = $(this).find('textarea').val();
+    //
     const formData = $(this).serialize();
+    //the tweet text
+    const tweetText = $(this).find("textarea").val();
     if (tweetText.length === 0) {
       alert('No content submitted');
     } else if (tweetText.length > 140) {
       alert('Tweet is too long');
-    } else {
-      console.log(formData);
     }
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: formData,
+      success: () => {
+        console.log('new tweet');
+        // GET all tweets
+        loadTweets();
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   });
   
   const loadTweets = function() {
@@ -67,7 +81,5 @@ $(() => {
       }
     });
   };
-  let tweetContent = $(this).find('textarea[name="text"]').val();
-
   loadTweets();
 });
