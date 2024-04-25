@@ -58,10 +58,10 @@ $(() => {
   };
   const isTweetValid = (tweetText) => {
     if (tweetText.length === 0) {
-      alert('No content submitted');
+      error.text('No content submitted');
       return false;
     } else if (tweetText.length > 140) {
-      alert('Tweet is too long');
+      error.text('Tweet is too long');
       return false;
     }
     return true;
