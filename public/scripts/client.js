@@ -54,6 +54,7 @@ $(() => {
       $('.tweets-box').prepend($tweetEntry);
     }
   };
+  let error = $("#error");
   const isTweetValid = (tweetText) => {
     if (tweetText.length === 0) {
       error.text('No content submitted');
