@@ -48,8 +48,6 @@ $(() => {
         `);
     return $tweet;
   };
-  const $tweetJQueryObject = $($tweet);
-  $tweetJQueryObject.find('.tweet-handle').text(data.user.handle);
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $tweetEntry = createTweetElement(tweet);

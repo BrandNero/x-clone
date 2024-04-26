@@ -3,17 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
+
 /*  */
 .new-tweet h2 {
-  text-align: flex-start;
+  text-align: center;
   font-size: 24px; 
   margin-bottom: 60px;
 }
 /*  tweet text area for typing */
 .new-tweet textarea {
-  width: 250%;
-  height: 50px;
+  width: 100%;
+  height: 200%;
   border: none;
   resize: none;
   outline: none;
@@ -28,7 +30,7 @@
   font-family: "Bungee", sans-serif;
   display: flex;
   justify-content: space-between;
-  width: 250%;
+  width: 100%;
 }
 
 /* Style for the button */
@@ -47,4 +49,18 @@
 /* if counter goes over 140 texts turn red */
 .counter.overCount{
   color: red;
+}
+@media only screen and (min-width: 1024px){
+    .container{
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      gap: 10px;
+    }
+    .new-tweet{
+      height: 100%;
+    }
+    #new-tweet-form{
+      width: 100%;
+    }
 }
