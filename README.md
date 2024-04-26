@@ -16,3 +16,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+### Final product
+
+!["Screenshot wide screen"](https://github.com/BrandNero/x-clone/blob/master/public/images/Screenshot%202024-04-25%20213041.png?raw=true)
+
+!["Screenshot small screen"](https://github.com/BrandNero/x-clone/blob/master/public/images/Screenshot%202024-04-25%20213106.png?raw=true)
