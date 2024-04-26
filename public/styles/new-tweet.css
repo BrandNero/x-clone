@@ -10,7 +10,7 @@
 .new-tweet h2 {
   text-align: center;
   font-size: 24px; 
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 /*  tweet text area for typing */
 .new-tweet textarea {
@@ -62,5 +62,9 @@
     }
     #new-tweet-form{
       width: 100%;
+    }
+    .new-tweet h2{
+      margin-top: 0;
+      padding-top: 200px;
     }
 }
